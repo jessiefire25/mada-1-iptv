@@ -1,0 +1,83 @@
+{
+  "app": {
+    "name": "MADA 1 IPTV",
+    "tagline": "#1 Auto-Optimized Streaming",
+    "package": "com.mada1.iptv",
+    "version": "1.0.0",
+    "downloader_code": "PENDING",
+    "download_url": "PENDING"
+  },
+  "theme": {
+    "primary_blue": "#1A73E8",
+    "accent_yellow": "#FBC02D",
+    "success_green": "#2E7D32",
+    "background": "#121212",
+    "text": "#FFFFFF"
+  },
+  "xtream": {
+    "enabled": true,
+    "auto_connect": true,
+    "save_accounts": true,
+    "epg_enabled": true
+  },
+  "live_help": {
+    "enabled": true,
+    "one_click": true,
+    "web_remote": true,
+    "port": 8080,
+    "secure": true
+  },
+  "device_engine": {
+    "auto_detect": true,
+    "auto_optimize": true,
+    "show_device_help": true,
+    "profiles": {
+      "firetv": {
+        "hw_accel": true,
+        "buffer_size": "medium",
+        "ui_scale": "tv",
+        "tips": ["Use Ethernet if possible", "Disable Data Saver", "Restart monthly"]
+      },
+      "nvidia_shield": {
+        "hw_accel": true,
+        "buffer_size": "large",
+        "4k_enabled": true,
+        "ethernet_priority": true,
+        "tips": ["Enable 4K/HDR", "Use official remote", "Best for high‑bitrate streams"]
+      },
+      "generic_box": {
+        "hw_accel": true,
+        "buffer_size": "small",
+        "low_ram": true,
+        "light_ui": true,
+        "tips": ["Close background apps", "Lower quality if buffering"]
+      },
+      "mobile": {
+        "hw_accel": true,
+        "data_saver": true,
+        "touch_mode": true,
+        "tips": ["Use Wi‑Fi to save data", "Lock orientation"]
+      }
+    }
+  },
+  "performance": {
+    "fast_startup": true,
+    "adaptive_buffer": true,
+    "auto_quality": true,
+    "hw_acceleration": true,
+    "memory_clean": true,
+    "parallel_load": true
+  },
+  "network": {
+    "ethernet_priority": true,
+    "fast_dns": true,
+    "failover": true
+  },
+  "help_center": {
+    "one_click_diag": true,
+    "speed_test": true,
+    "auto_fix": true,
+    "faq_builtin": true,
+    "device_guides": true
+  }
+}
