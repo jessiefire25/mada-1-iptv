@@ -3,8 +3,6 @@ name: Android Build
 on:
   push:
     branches: [ main ]
-  pull_request:
-    branches: [ main ]
 
 jobs:
   build:
@@ -19,19 +17,20 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
 
-      - name: Show files & make gradlew runnable
-        run: |
-          ls -la
-          chmod +x gradlew
-          ./gradlew --version
+      - name: List project structure
+        run: ls -la && ls -la app/
 
-      - name: Build & list outputs
-        run: |
-          ./gradlew clean build
-          find . -name "*.apk"
+      - name: Make gradlew executable
+        run: chmod +x gradlew
 
-      - name: Upload all found APKs
+      - name: Build Debug APK
+        run: ./gradlew assembleDebug --stacktrace
+
+      - name: List generated files
+        run: find . -type f -name "*.apk" -o -name "*.aar"
+
+      - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
-          name: Built-APKs
-          path: ./**/build/outputs/apk/**/*.apk
+          name: App-Debug
+          path: app/build/outputs/apk/debug/
